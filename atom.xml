@@ -4,7 +4,7 @@
   <title><![CDATA[Not Your Average End User]]></title>
   <link href="http://klatz.co/atom.xml" rel="self"/>
   <link href="http://klatz.co/"/>
-  <updated>2014-10-25T18:36:44-05:00</updated>
+  <updated>2014-10-25T18:38:06-05:00</updated>
   <id>http://klatz.co/</id>
   <author>
     <name><![CDATA[Ian Klatzco]]></name>
@@ -32,6 +32,9 @@
     <content type="html"><![CDATA[<p>About two weeks before Valetine&rsquo;s Day, I got the idea of making a Zelda-themed card for a friend of mine. She and I are both big Zelda fans. I searched the web for a  card, until I found <a href="(http://blog.close-encounters.com.au/2013/02/normal-0-false-false-false.html">this one</a> that I liked because of the extra dimensions. It seems that the pop-up style heart container card is a pretty popular one overall, and this is one of many.</p>
 
 <p>I decided to take it another step, incoporating some of my (few) electronics skills into the project. To be honest, it was mostly an excuse to order some parts off of Digikey and super-nerdify what would otherwise be a fairly straightforward project. But hey! It was extraordinarily fun.</p>
+
+<!-- more -->
+
 
 <p>So did some research for recordable card circuits, and I found <a href="http://hackaday.com/2011/11/22/musical-greeting-card-with-minimal-parts/">this Hackaday post</a> about how to make one on my own. I&rsquo;d been to Digikey&rsquo;s website before, but I had never made an order. Consequently, I had no idea what I was in for. I decided to go through with the project, and ended up ordering all the parts about a week in advance. After a minor issue with shipping a lithium-ion battery through UPS and <em>actually finding everything</em>, I got the parts on the Thursday night before Valentine&rsquo;s Day. I had some debugging left to do, so it was a fairly long night. It was by all means worth it.</p>
 
