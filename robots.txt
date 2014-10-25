@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://ianklatzco.github.io/sitemap.xml 
+Sitemap: http://klatz.co/sitemap.xml 
