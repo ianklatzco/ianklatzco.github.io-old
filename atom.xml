@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Not Your Average End User]]></title>
-  <link href="http://klatz.co/atom.xml" rel="self"/>
-  <link href="http://klatz.co/"/>
-  <updated>2014-10-25T01:14:04-05:00</updated>
-  <id>http://klatz.co/</id>
+  <link href="http://ianklatzco.github.io/atom.xml" rel="self"/>
+  <link href="http://ianklatzco.github.io/"/>
+  <updated>2014-10-25T17:32:36-05:00</updated>
+  <id>http://ianklatzco.github.io/</id>
   <author>
     <name><![CDATA[Ian Klatzco]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[New Blog]]></title>
-    <link href="http://klatz.co/blog/2014/10/25/new-blog/"/>
+    <link href="http://ianklatzco.github.io/blog/2014/10/25/new-blog/"/>
     <updated>2014-10-25T01:06:35-05:00</updated>
-    <id>http://klatz.co/blog/2014/10/25/new-blog</id>
+    <id>http://ianklatzco.github.io/blog/2014/10/25/new-blog</id>
     <content type="html"><![CDATA[<p>Here we are again&hellip;</p>
 
 <p>I have, after some deliberation and much procrastination, finally setup my blog once again! I will attempt to populate it with old posts and old timestamps, and will likely change the theme to something I like better.</p>
