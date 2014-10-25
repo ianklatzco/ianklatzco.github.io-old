@@ -4,7 +4,7 @@
   <title><![CDATA[Not Your Average End User]]></title>
   <link href="http://klatz.co/atom.xml" rel="self"/>
   <link href="http://klatz.co/"/>
-  <updated>2014-10-25T18:11:49-05:00</updated>
+  <updated>2014-10-25T18:18:40-05:00</updated>
   <id>http://klatz.co/</id>
   <author>
     <name><![CDATA[Ian Klatzco]]></name>
@@ -12,6 +12,15 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Building a Cheap Valentine's Day Card Audio Circuit]]></title>
+    <link href="http://klatz.co/blog/2014/10/25/building-a-cheap-valentines-day-card-audio-circuit/"/>
+    <updated>2014-10-25T18:16:55-05:00</updated>
+    <id>http://klatz.co/blog/2014/10/25/building-a-cheap-valentines-day-card-audio-circuit</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[New Blog]]></title>
