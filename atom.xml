@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://ianklatzco.github.io/atom.xml" rel="self"/>
   <link href="http://ianklatzco.github.io/"/>
-  <updated>2014-10-25T00:55:30-05:00</updated>
+  <updated>2014-10-25T01:08:24-05:00</updated>
   <id>http://ianklatzco.github.io/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
@@ -12,5 +12,16 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[New Blog]]></title>
+    <link href="http://ianklatzco.github.io/blog/2014/10/25/new-blog/"/>
+    <updated>2014-10-25T01:06:35-05:00</updated>
+    <id>http://ianklatzco.github.io/blog/2014/10/25/new-blog</id>
+    <content type="html"><![CDATA[<p>Here we are again&hellip;</p>
+
+<p>I have, after some deliberation and much procrastination, finally setup my blog once again! I will attempt to populate it with old posts and old timestamps, and will likely change the theme to something I like better.</p>
+]]></content>
+  </entry>
   
 </feed>
