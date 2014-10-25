@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: self | Not Your Average End User]]></title>
+  <title><![CDATA[Category: Self | Not Your Average End User]]></title>
   <link href="http://klatz.co/blog/categories/self/atom.xml" rel="self"/>
   <link href="http://klatz.co/"/>
-  <updated>2014-10-25T17:54:20-05:00</updated>
+  <updated>2014-10-25T17:54:55-05:00</updated>
   <id>http://klatz.co/</id>
   <author>
     <name><![CDATA[Ian Klatzco]]></name>
