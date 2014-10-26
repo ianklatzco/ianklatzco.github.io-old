@@ -4,7 +4,7 @@
   <title><![CDATA[Not Your Average End User]]></title>
   <link href="http://klatz.co/atom.xml" rel="self"/>
   <link href="http://klatz.co/"/>
-  <updated>2014-10-25T19:45:28-05:00</updated>
+  <updated>2014-10-25T20:40:18-05:00</updated>
   <id>http://klatz.co/</id>
   <author>
     <name><![CDATA[Ian Klatzco]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[New Blog]]></title>
-    <link href="http://klatz.co/blog/2014/10/25/new-blog/"/>
+    <link href="http://klatz.co/blog/new-blog/"/>
     <updated>2014-10-25T01:06:35-05:00</updated>
-    <id>http://klatz.co/blog/2014/10/25/new-blog</id>
+    <id>http://klatz.co/blog/new-blog</id>
     <content type="html"><![CDATA[<p>Here we are again&hellip;</p>
 
 <p>I have, after some deliberation and much procrastination, finally setup my blog once again! I will attempt to populate it with old posts and old timestamps, and will likely change the theme to something I like better.</p>
@@ -26,9 +26,9 @@
   
   <entry>
     <title type="html"><![CDATA[Building a Cheap Valentine's Day Card Audio Circuit]]></title>
-    <link href="http://klatz.co/blog/2014/02/22/building-a-cheap-valentines-day-card-audio-circuit/"/>
+    <link href="http://klatz.co/blog/building-a-cheap-valentines-day-card-audio-circuit/"/>
     <updated>2014-02-22T19:43:39-06:00</updated>
-    <id>http://klatz.co/blog/2014/02/22/building-a-cheap-valentines-day-card-audio-circuit</id>
+    <id>http://klatz.co/blog/building-a-cheap-valentines-day-card-audio-circuit</id>
     <content type="html"><![CDATA[<p>About two weeks before Valetine&rsquo;s Day, I got the idea of making a Zelda-themed card for a friend of mine. She and I are both big Zelda fans. I searched the web for a  card, until I found <a href="(http://blog.close-encounters.com.au/2013/02/normal-0-false-false-false.html">this one</a> that I liked because of the extra dimensions. It seems that the pop-up style heart container card is a pretty popular one overall, and this is one of many.</p>
 
 <p>I decided to take it another step, incoporating some of my (few) electronics skills into the project. To be honest, it was mostly an excuse to order some parts off of Digikey and super-nerdify what would otherwise be a fairly straightforward project. But hey! It was extraordinarily fun.</p>
@@ -74,6 +74,35 @@ In order to program the ATtiny, I used the Arduino. I followed the guide at <a h
 <p>Listening to serial communication is the coolest thing ever. It sounds a bit like a dial-up modem.</p>
 
 <iframe width="560" height="315" src="//www.youtube.com/embed/nlxuCgJxEsg" frameborder="0" allowfullscreen></iframe>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Accessing the Admin Panel on Coke Freestyle Machines]]></title>
+    <link href="http://klatz.co/blog/accessing-the-admin-panel-on-coke-freestyle-machines/"/>
+    <updated>2014-01-31T22:23:06-06:00</updated>
+    <id>http://klatz.co/blog/accessing-the-admin-panel-on-coke-freestyle-machines</id>
+    <content type="html"><![CDATA[<p>Recently, a Meatheads burger joint opened up just down the street from my house. As a method of celebrating my first driver&rsquo;s license and to say fareweall to the pair of Lithuanians that had stayed with us through the week, we decided to go get some lunch.</p>
+
+<p>While there, I noticed a pair of those snazzy new Coke machines, the kind that let you pick a multitude of flavors and mix it with various popular beverages. My brother reminded me that we had found the admin panel on a previous visit, so we decided to look for it again.</p>
+
+<!-- more -->
+
+
+<p><img src="http://i.imgur.com/auJEpJe.jpg" alt="coke machine pic" /></p>
+
+<p>The dispenser appears to have some sort of touch screen (resistive? capacitive?) that&rsquo;s something of a pain to actually use.</p>
+
+<p>Acessing the admin panel is pretty straightforward. All you have to do is select the water icon/bubble, place five fingers around it on the screen, and then mash it until a loading box appears. From that screen you can see the current levels of the various syrups that make up the myriad drinks available.</p>
+
+<p>You can&rsquo;t really do much with the screen, since the actual access panels (Admin, Technician, Supplier I believe) are locked with a password. But it&rsquo;s certainly fun doing some harmless sneaking about.</p>
+
+<hr />
+
+<p>Here&rsquo;s a video of it being done.</p>
+
+<iframe width="420" height="315" src="//www.youtube.com/embed/PlUpkZjw3vA" frameborder="0" allowfullscreen></iframe>
 
 ]]></content>
   </entry>
