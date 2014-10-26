@@ -16,26 +16,31 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>http://klatz.co/blog/why-1-1-ipad-programs-suck/</loc>
+    <lastmod>2014-01-07T05:43:02-06:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>http://klatz.co/blog/archives/</loc>
-    <lastmod>2014-10-26T11:48:36-05:00</lastmod>
+    <lastmod>2014-10-26T12:35:36-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://klatz.co/</loc>
-    <lastmod>2014-10-26T11:48:36-05:00</lastmod>
+    <lastmod>2014-10-26T12:35:36-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://klatz.co/about/</loc>
-    <lastmod>2014-10-26T11:48:36-05:00</lastmod>
+    <lastmod>2014-10-26T12:35:36-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://klatz.co/projects/</loc>
-    <lastmod>2014-10-26T11:48:36-05:00</lastmod>
+    <lastmod>2014-10-26T12:35:36-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
