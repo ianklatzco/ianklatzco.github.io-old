@@ -4,7 +4,7 @@
   <title><![CDATA[Not Your Average End User]]></title>
   <link href="http://klatz.co/atom.xml" rel="self"/>
   <link href="http://klatz.co/"/>
-  <updated>2014-10-26T12:41:11-05:00</updated>
+  <updated>2014-10-26T14:07:21-05:00</updated>
   <id>http://klatz.co/</id>
   <author>
     <name><![CDATA[Ian Klatzco]]></name>
@@ -20,7 +20,72 @@
     <id>http://klatz.co/blog/new-blog</id>
     <content type="html"><![CDATA[<p>Here we are again&hellip;</p>
 
-<p>I have, after some deliberation and much procrastination, finally setup my blog once again! I will attempt to populate it with old posts and old timestamps, and will likely change the theme to something I like better.</p>
+<p>I have, after some deliberation and much struggling with the command line, finally setup my blog once again! I will attempt to populate it with old posts and old timestamps, and will likely change the theme to something I like better.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[First Github Pull Request: Woohoo!]]></title>
+    <link href="http://klatz.co/blog/first-github-pull-request-woohoo/"/>
+    <updated>2014-03-18T11:40:51-05:00</updated>
+    <id>http://klatz.co/blog/first-github-pull-request-woohoo</id>
+    <content type="html"><![CDATA[<p>I made my first Github pull request today, <a href="https://github.com/jdavis/twofactorauth/pull/161">visible here</a>. I learned some about how to pull. Though I figure it&rsquo;s time to learn Git bash rather than relying on the rather slow (but pretty!) GUI application.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Doge Shell Program]]></title>
+    <link href="http://klatz.co/blog/doge-shell-program/"/>
+    <updated>2014-03-11T21:40:00-05:00</updated>
+    <id>http://klatz.co/blog/doge-shell-program</id>
+    <content type="html"><![CDATA[<p>A friend of mine showed me <a href="https://github.com/thiderman/doge">this absolute beauty</a>:</p>
+
+<!-- more -->
+
+
+<p><img src="https://github-camo.global.ssl.fastly.net/aec4c3fc2d674f2a4e90ed9e1413d95f204d7445/687474703a2f2f692e696d6775722e636f6d2f48784839716b612e706e67" alt="doge" /></p>
+
+<p>I haven&rsquo;t yet worked out how to get it running in Windows, though. Part of it must be the fact that cmd&rsquo;s a joke out of yesteryear.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Mysterious Mic Grate on Apple Earbuds]]></title>
+    <link href="http://klatz.co/blog/mysterious-mic-grate-on-apple-earbuds/"/>
+    <updated>2014-03-09T19:48:07-05:00</updated>
+    <id>http://klatz.co/blog/mysterious-mic-grate-on-apple-earbuds</id>
+    <content type="html"><![CDATA[<p>Ever noticed that Apple&rsquo;s signature earbuds have integrated microphones? There&rsquo;s a small grate of sorts on the back of the volume control switch attached to the standard TRRS earbuds (those with an extra ring on the jack) which seems to signify that there&rsquo;s some sort of mic contained within.</p>
+
+<p>I happened to have a pair of well-loved, fairly beaten-up earbuds that have a crack in the middle of the switch. Naturally, they had to be dismantled. But what I found inside was a bit surprising.</p>
+
+<!-- more -->
+
+
+<p><img src="http://i.imgur.com/YOVNGnk.jpg" alt="Pic of crack" /></p>
+
+<p><img src="http://i.imgur.com/aZZIayA.jpg" alt="other side" /></p>
+
+<p>It seems as if the microphone grate&hellip; doesn&rsquo;t actually lead anywhere. I guess the mic is still there, underneath the plastic, but that it doesn&rsquo;t actually need any holes to let sound in. That&rsquo;s pretty Apple.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Playing With the Experiment on Google IO's Site]]></title>
+    <link href="http://klatz.co/blog/playing-with-the-experiment-on-google-ios-site/"/>
+    <updated>2014-03-07T23:20:09-06:00</updated>
+    <id>http://klatz.co/blog/playing-with-the-experiment-on-google-ios-site</id>
+    <content type="html"><![CDATA[<p>Looking at <a href="https://developers.google.com/events/io">Google IO&rsquo;s website</a> (mostly with info for last year, so this is admittedly dated) I noticed an easter egg of sorts, a pretty Javascript application mysteriously titled <a href="https://developers.google.com/events/io/experiment">&ldquo;/experiment&rdquo;</a>. The first thing you notice is the fact you can click on the I&rsquo;s and the O&rsquo;s. The next is that your inputs are tracked on the bottom of the screen. And then you noticed that there are right inputs and wrong inputs.</p>
+
+<!-- more -->
+
+
+<p><img src="http://i.imgur.com/SoDk97S.png" alt="io experiment" /></p>
+
+<p>So naturally I play around a bit, finding two combinations: 01010011, which yields a pixelated version of the IO logo and is named eight-bit according to the url. Next I found 10001000, which shows the &ldquo;synth&rdquo; module.</p>
+
+<p>I google a binary-to-text convert and found that these represented some interesting values — the convert return HTML special character codes — nor did they seem particularly relevant. 0101001 yields &ldquo;S&rdquo;, whereas 10001000 yields &ldquo;&#710;&rdquo;, a circumflex (hooray for new words).</p>
+
+<p>Naturally, I had to know more. I creatively googled &ldquo;google io experiment&rdquo; and found the <a href="https://github.com/Instrument/google-io-2013">GitHub page</a>. Yay open source! Using GitHub&rsquo;s search bar, I plugged in the first number set (01010011) and found a list of <a href="https://github.com/Instrument/google-io-2013/blob/fe814b62e68fcd5db481d348a2ae0fdb2a6f6d4a/js/mode.js">all possible combinations</a>. (Conveniently commented in, too, I might add. Else I might&rsquo;ve never found them :3). Some of the inputs appear to not be accepted (notably 10101010, reportedly the &ldquo;metaball&rdquo; mode, and 10010110, the &ldquo;donut&rdquo; mode, and a few look as if they might have minor bugs (mentioned in the comments for the first batch, lines 65-69, plus I noticed some visual effects in Eight Bit), but the rest appear to be in working order. My favorite one is SpaceMode, 00101010.</p>
 ]]></content>
   </entry>
   
@@ -62,7 +127,7 @@ In order to program the ATtiny, I used the Arduino. I followed the guide at <a h
 
 <h4>Final Product</h4>
 
-<iframe width="560" height="315" src="//www.youtube.com/embed/ansXraLD05M" frameborder="0" allowfullscreen></iframe>
+<div class="embed-video-container"><iframe src="//www.youtube.com/embed/ansXraLD05M" allowfullscreen></iframe></div>
 
 
 <p>I have to thank two friends of mine, who provided awesome help throughout this project. Both who work in the tech industry. If you&rsquo;re a high school student, you should definitely try to communicate with professionals who work in positions you&rsquo;d like to have. If you&rsquo;re a professional, you should be open to helping kids pursue their interests. The relationships I&rsquo;ve developed have been extremely beneficial.</p>
@@ -73,7 +138,7 @@ In order to program the ATtiny, I used the Arduino. I followed the guide at <a h
 
 <p>Listening to serial communication is the coolest thing ever. It sounds a bit like a dial-up modem.</p>
 
-<iframe width="560" height="315" src="//www.youtube.com/embed/nlxuCgJxEsg" frameborder="0" allowfullscreen></iframe>
+<div class="embed-video-container"><iframe src="//www.youtube.com/embed/nlxuCgJxEsg" allowfullscreen></iframe></div>
 
 ]]></content>
   </entry>

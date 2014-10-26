@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Accessing the Admin Panel on Coke Freestyle Machines - Not Your Average End User</title>
+  <title>Playing With the Experiment on Google IO&#8217;s Site - Not Your Average End User</title>
   <meta name="author" content="Ian Klatzco">
 
   
-  <meta name="description" content="Recently, a Meatheads burger joint opened up just down the street from my house. As a method of celebrating my first driver&rsquo;s license and to &hellip;">
+  <meta name="description" content="Looking at Google IO&rsquo;s website (mostly with info for last year, so this is admittedly dated) I noticed an easter egg of sorts, a pretty &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://klatz.co/blog/accessing-the-admin-panel-on-coke-freestyle-machines">
+  <link rel="canonical" href="http://klatz.co/blog/playing-with-the-experiment-on-google-ios-site">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Not Your Average End User" type="application/atom+xml">
@@ -82,7 +82,7 @@
   
   <header>
     
-      <h1 class="entry-title">Accessing the Admin Panel on Coke Freestyle Machines</h1>
+      <h1 class="entry-title">Playing With the Experiment on Google IO&#8217;s Site</h1>
     
     
       <p class="meta">
@@ -91,34 +91,25 @@
 
 
 
-<time class='entry-date' datetime='2014-01-31T22:23:06-06:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>31</span><span class='date-suffix'>st</span>, <span class='date-year'>2014</span></span> <span class='time'>10:23 pm</span></time>
+<time class='entry-date' datetime='2014-03-07T23:20:09-06:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>7</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>11:20 pm</span></time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>Recently, a Meatheads burger joint opened up just down the street from my house. As a method of celebrating my first driver&rsquo;s license and to say fareweall to the pair of Lithuanians that had stayed with us through the week, we decided to go get some lunch.</p>
-
-<p>While there, I noticed a pair of those snazzy new Coke machines, the kind that let you pick a multitude of flavors and mix it with various popular beverages. My brother reminded me that we had found the admin panel on a previous visit, so we decided to look for it again.</p>
+<div class="entry-content"><p>Looking at <a href="https://developers.google.com/events/io">Google IO&rsquo;s website</a> (mostly with info for last year, so this is admittedly dated) I noticed an easter egg of sorts, a pretty Javascript application mysteriously titled <a href="https://developers.google.com/events/io/experiment">&ldquo;/experiment&rdquo;</a>. The first thing you notice is the fact you can click on the I&rsquo;s and the O&rsquo;s. The next is that your inputs are tracked on the bottom of the screen. And then you noticed that there are right inputs and wrong inputs.</p>
 
 <!-- more -->
 
 
-<p><img src="http://i.imgur.com/auJEpJe.jpg" alt="coke machine pic" /></p>
+<p><img src="http://i.imgur.com/SoDk97S.png" alt="io experiment" /></p>
 
-<p>The dispenser appears to have some sort of touch screen (resistive? capacitive?) that&rsquo;s something of a pain to actually use.</p>
+<p>So naturally I play around a bit, finding two combinations: 01010011, which yields a pixelated version of the IO logo and is named eight-bit according to the url. Next I found 10001000, which shows the &ldquo;synth&rdquo; module.</p>
 
-<p>Acessing the admin panel is pretty straightforward. All you have to do is select the water icon/bubble, place five fingers around it on the screen, and then mash it until a loading box appears. From that screen you can see the current levels of the various syrups that make up the myriad drinks available.</p>
+<p>I google a binary-to-text convert and found that these represented some interesting values — the convert return HTML special character codes — nor did they seem particularly relevant. 0101001 yields &ldquo;S&rdquo;, whereas 10001000 yields &ldquo;&#710;&rdquo;, a circumflex (hooray for new words).</p>
 
-<p>You can&rsquo;t really do much with the screen, since the actual access panels (Admin, Technician, Supplier I believe) are locked with a password. But it&rsquo;s certainly fun doing some harmless sneaking about.</p>
-
-<hr />
-
-<p>Here&rsquo;s a video of it being done.</p>
-
-<iframe width="420" height="315" src="//www.youtube.com/embed/PlUpkZjw3vA" frameborder="0" allowfullscreen></iframe>
-
+<p>Naturally, I had to know more. I creatively googled &ldquo;google io experiment&rdquo; and found the <a href="https://github.com/Instrument/google-io-2013">GitHub page</a>. Yay open source! Using GitHub&rsquo;s search bar, I plugged in the first number set (01010011) and found a list of <a href="https://github.com/Instrument/google-io-2013/blob/fe814b62e68fcd5db481d348a2ae0fdb2a6f6d4a/js/mode.js">all possible combinations</a>. (Conveniently commented in, too, I might add. Else I might&rsquo;ve never found them :3). Some of the inputs appear to not be accepted (notably 10101010, reportedly the &ldquo;metaball&rdquo; mode, and 10010110, the &ldquo;donut&rdquo; mode, and a few look as if they might have minor bugs (mentioned in the comments for the first batch, lines 65-69, plus I noticed some visual effects in Eight Bit), but the rest appear to be in working order. My favorite one is SpaceMode, 00101010.</p>
 </div>
 
 
@@ -134,7 +125,7 @@
 
 
 
-<time class='entry-date' datetime='2014-01-31T22:23:06-06:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>31</span><span class='date-suffix'>st</span>, <span class='date-year'>2014</span></span> <span class='time'>10:23 pm</span></time>
+<time class='entry-date' datetime='2014-03-07T23:20:09-06:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>7</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>11:20 pm</span></time>
       
 
 
@@ -142,7 +133,7 @@
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://klatz.co/blog/accessing-the-admin-panel-on-coke-freestyle-machines/" data-via="iananananan" data-counturl="http://klatz.co/blog/accessing-the-admin-panel-on-coke-freestyle-machines/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://klatz.co/blog/playing-with-the-experiment-on-google-ios-site/" data-via="iananananan" data-counturl="http://klatz.co/blog/playing-with-the-experiment-on-google-ios-site/" >Tweet</a>
   
   
   
@@ -151,10 +142,10 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/why-1-1-ipad-programs-suck/" title="Previous Post: Why 1:1 iPad programs suck.">&laquo; Why 1:1 iPad programs suck.</a>
+        <a class="basic-alignment left" href="/blog/building-a-cheap-valentines-day-card-audio-circuit/" title="Previous Post: Building a Cheap Valentine's Day Card Audio Circuit">&laquo; Building a Cheap Valentine&#8217;s Day Card Audio Circuit</a>
       
       
-        <a class="basic-alignment right" href="/blog/building-a-cheap-valentines-day-card-audio-circuit/" title="Next Post: Building a Cheap Valentine's Day Card Audio Circuit">Building a Cheap Valentine&#8217;s Day Card Audio Circuit &raquo;</a>
+        <a class="basic-alignment right" href="/blog/mysterious-mic-grate-on-apple-earbuds/" title="Next Post: Mysterious Mic Grate on Apple Earbuds">Mysterious Mic Grate on Apple Earbuds &raquo;</a>
       
     </p>
   </footer>
