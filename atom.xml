@@ -4,7 +4,7 @@
   <title><![CDATA[Not Your Average End User]]></title>
   <link href="http://klatz.co/atom.xml" rel="self"/>
   <link href="http://klatz.co/"/>
-  <updated>2014-10-26T12:35:36-05:00</updated>
+  <updated>2014-10-26T12:41:11-05:00</updated>
   <id>http://klatz.co/</id>
   <author>
     <name><![CDATA[Ian Klatzco]]></name>
@@ -110,14 +110,14 @@ In order to program the ATtiny, I used the Arduino. I followed the guide at <a h
   <entry>
     <title type="html"><![CDATA[Why 1:1 iPad Programs Suck.]]></title>
     <link href="http://klatz.co/blog/why-1-1-ipad-programs-suck/"/>
-    <updated>2014-01-07T05:43:02-06:00</updated>
+    <updated>2014-01-07T17:43:02-06:00</updated>
     <id>http://klatz.co/blog/why-1-1-ipad-programs-suck</id>
     <content type="html"><![CDATA[<p>I consider myself a pretty efficient worker when I get down to it. Not that I work all the time (actually, I don&rsquo;t work much of the time, but that&rsquo;s another issue), but that I work with optimal utilization of available resources (read: I like configuring my gadgets to help me do things). It comes from a childhood of ample freedom with tech, in that my father always let me to take things from him and put them into the most useful form. Beyond that, I like technology. Hell, I love technology, and the productivity boosts it offers. So you might imagine my elation when my school announced it would begin a 1:1 iPad program starting this year.</p>
 
 <!-- more -->
 
 
-<p>Bias against Apple aside, I had always entertained the notion of walking into my classes with a computing device. The particular draw was the ability to record homework assignments into <a href="wunderlist.com">Wunderlist</a> (which, as you can see below, has grown of of control pretty quickly). I dreamed of a day where I could freely check my email, google an unknown topic, or zero my RSS feeds on the fly—and that day came.</p>
+<p>Bias against Apple aside, I had always entertained the notion of walking into my classes with a computing device. The particular draw was the ability to record homework assignments into <a href="http://www.wunderlist.com">Wunderlist</a> (which, as you can see below, has grown of of control pretty quickly). I dreamed of a day where I could freely check my email, google an unknown topic, or zero my RSS feeds on the fly—and that day came.</p>
 
 <p>But it came with more inconveniences than I could have ever imagined. There are two major problems.</p>
 
@@ -127,7 +127,7 @@ In order to program the ATtiny, I used the Arduino. I followed the guide at <a h
 </ul>
 
 
-<p><img src="http://klatz.co/content/images/2014/Jan/2013_11_05_20_10.jpg" alt="silliness" /></p>
+<p><img src="http://i.imgur.com/6bFnaKI.jpg" alt="silliness" /></p>
 
 <p>That&rsquo;s my iPad for composition. One monitor has a screenshot of my ipad for the assignment. Another my todo list and the book page itself, the pages also screenshots.</p>
 
