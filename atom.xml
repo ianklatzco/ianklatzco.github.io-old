@@ -4,7 +4,7 @@
   <title><![CDATA[Not Your Average End User]]></title>
   <link href="http://klatz.co/atom.xml" rel="self"/>
   <link href="http://klatz.co/"/>
-  <updated>2014-12-04T13:54:56-06:00</updated>
+  <updated>2014-12-04T14:04:48-06:00</updated>
   <id>http://klatz.co/</id>
   <author>
     <name><![CDATA[Ian Klatzco]]></name>
@@ -19,6 +19,9 @@
     <updated>2014-12-04T13:39:38-06:00</updated>
     <id>http://klatz.co/blog/eagle-project</id>
     <content type="html"><![CDATA[<p>Two weeks ago, I finished my Eagle Project.</p>
+
+<!-- more -->
+
 
 <p>//pics of completed tables.</p>
 
