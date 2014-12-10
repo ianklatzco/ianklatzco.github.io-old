@@ -4,7 +4,7 @@
   <title><![CDATA[Not Your Average End User]]></title>
   <link href="http://klatz.co/atom.xml" rel="self"/>
   <link href="http://klatz.co/"/>
-  <updated>2014-12-09T20:23:24-06:00</updated>
+  <updated>2014-12-09T20:24:21-06:00</updated>
   <id>http://klatz.co/</id>
   <author>
     <name><![CDATA[Ian Klatzco]]></name>
@@ -20,7 +20,7 @@
     <id>http://klatz.co/blog/bridge-competition</id>
     <content type="html"><![CDATA[<p>One of my school&rsquo;s yearly events is a bridge competition put on by the science department and sponsored by a relatively successful construction company full of alumni. It&rsquo;s been running some twenty-odd years, and my physics teacher dangled tasty extra credit in front of our class in exchange for a competent bridge.</p>
 
-<!--more-->
+<!-- more -->
 
 
 <p>So I partnered up and we built a bridge, and then another bridge because we had the spare parts and felt like it.</p>
