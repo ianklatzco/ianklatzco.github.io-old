@@ -4,7 +4,7 @@
   <title><![CDATA[Not Your Average End User]]></title>
   <link href="http://klatz.co/atom.xml" rel="self"/>
   <link href="http://klatz.co/"/>
-  <updated>2014-12-16T01:49:39-06:00</updated>
+  <updated>2015-01-10T03:47:36-06:00</updated>
   <id>http://klatz.co/</id>
   <author>
     <name><![CDATA[Ian Klatzco]]></name>
@@ -12,6 +12,26 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Randy Pausch: Final Lecture]]></title>
+    <link href="http://klatz.co/blog/randy-pausch-final-lecture/"/>
+    <updated>2015-01-10T03:33:26-06:00</updated>
+    <id>http://klatz.co/blog/randy-pausch-final-lecture</id>
+    <content type="html"><![CDATA[<p>Perhaps a few years late, but I just found this <a href="https://www.youtube.com/watch?v=ji5_MqicxSo">positively gorgeous final lecture by Randy Pausch</a>.</p>
+
+<!-- more -->
+
+
+<p>As a wannabe computer science major/virtual reality geek, I&rsquo;m really glad that I can directly relate to some of the work he did, and he&rsquo;s got so many absolutely wonderful points throughout the entire video.</p>
+
+<p>Something cool: At one point, he references a Pirates of the Carribean attraction he worked on. I remember going to that attraction, and thinking it was the <strong>coolest</strong> thing. Funny, the little ways you bump into people.</p>
+
+<p>One moment that really shines: <a href="http://www.youtube.com/watch?v=ji5_MqicxSo&amp;t=61m40s">http://www.youtube.com/watch?v=ji5_MqicxSo&amp;t=61m40s</a></p>
+
+<p>Originally found via <a href="https://www.youtube.com/watch?v=ji5_MqicxSo">this Jeff Atwood post</a>.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[How I Deal With MIT Deferral]]></title>
