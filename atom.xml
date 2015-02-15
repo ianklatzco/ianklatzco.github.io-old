@@ -4,7 +4,7 @@
   <title><![CDATA[Not Your Average End User]]></title>
   <link href="http://klatz.co/atom.xml" rel="self"/>
   <link href="http://klatz.co/"/>
-  <updated>2015-02-09T20:57:55-06:00</updated>
+  <updated>2015-02-15T17:09:24-06:00</updated>
   <id>http://klatz.co/</id>
   <author>
     <name><![CDATA[Ian Klatzco]]></name>
@@ -12,6 +12,25 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Raspberry Pi: NES-PC]]></title>
+    <link href="http://klatz.co/blog/raspberry-pi-nes-pc/"/>
+    <updated>2015-02-15T16:25:48-06:00</updated>
+    <id>http://klatz.co/blog/raspberry-pi-nes-pc</id>
+    <content type="html"><![CDATA[<p>To wrap up an old loose end with a friend, I finished building an NES-themed media center PC built around a Raspberry Pi.</p>
+
+<!-- more -->
+
+
+<p>We had originally started this project way before the Raspberry Pi was released, towards the end of 2011 or so. The initial plans were to throw a full-size motherboard and laptop CD drive into an NES case, along with a PicoPSU. Beyond cannabalizing the NES case, we never finished the original project, so over winter break we decided to throw a Raspberry Pi inside and finally wrap things up.</p>
+
+<iframe class="imgur-album" width="100%" height="550" frameborder="0" src="//imgur.com/a/rsbb2/embed"></iframe>
+
+
+<p>The Raspberry Pi is mounted on some screws attached to the bottom of the case. The controller ports are USB-to-NES, ordered online. The power button was manually resoldered and attached to Raspberry Pi pins according to online pinouts and tested (rather timidly for fear of shorts) until it worked. Power currently retains its original function, mirroring what it did on the original NES. Reset, however, is not soldering to anything, but the LED still functions.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Randy Pausch: Final Lecture]]></title>
