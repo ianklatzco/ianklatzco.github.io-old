@@ -122,7 +122,7 @@ Here&rsquo;re some of the parts:
 
 <p>I connected pins 0 and 1 on the ATtiny to the speaker and switch, respectively. After soldering everything in place, I decided that the reed switch was too difficult to align, so I swapped it for the SPST. I wrote the final version of the code to the ATtiny (or so I thought), connected the battery, and everything looked like it was good to go.</p>
 
-<p>Suddenly, an eerie croaking noise came out of the speaker, audibly changing tones but doing so very slowly. As it was already about midnight at that, I panicked. I guessed the issue was the clock rate on the chip — I tested the code on the Arduino, which boasts a 20MHz crystal, as opposed to the ATtiny, which has a paltry 1MHz. A quick google search found a <a href="http://electronics.stackexchange.com/questions/7859/how-do-i-set-the-clock-speed-fuses-on-an-attiny85-when-using-an-arduino-as-a-pro">Stack Exchange</a> post that told me that I should multiply all values by a factor of sixteen, which worked splendidly. The notes were out of tune, and the croaking sounds remained, but it wasn&rsquo;t nearly as bad as before. The final code is also <a href="https://github.com/ianklatzco/melody_revised/blob/master/zelda_chest_noise_x16.ino">on GitHub</a>.</p>
+<p>Suddenly, an eerie croaking noise came out of the speaker, audibly changing tones but doing so very slowly. As it was already about midnight at that, I panicked. I guessed the issue was the clock rate on the chip — I tested the code on the Arduino, which boasts a 20MHz crystal (which actually runs at 16MHz most of the time), as opposed to the ATtiny, which has a paltry 1MHz. A quick google search found a <a href="http://electronics.stackexchange.com/questions/7859/how-do-i-set-the-clock-speed-fuses-on-an-attiny85-when-using-an-arduino-as-a-pro">Stack Exchange</a> post that told me that I should multiply all values by a factor of sixteen, which worked splendidly. The notes were out of tune, and the croaking sounds remained, but it wasn&rsquo;t nearly as bad as before. The final code is also <a href="https://github.com/ianklatzco/melody_revised/blob/master/zelda_chest_noise_x16.ino">on GitHub</a>.</p>
 
 <h4>Using the Arduino as an ISP (to program the ATtiny)</h4>
 
@@ -191,7 +191,7 @@ In order to program the ATtiny, I used the Arduino. I followed the guide at <a h
   
     <section>
   <h1>About Me</h1>
-  <p>Hi! I&#8217;m Ian Klatzco. I like computers and books and governments and using all those things together to make people&#8217;s lives better. I really like MIT. <a href="/about">More</a></p>
+  <p>Hi! I&#8217;m Ian Klatzco. I like computers and books and governments and using all those things together to make people&#8217;s lives better. I really like MIT and UIUC. <a href="/about">More</a></p>
 
 </section>
 <section>

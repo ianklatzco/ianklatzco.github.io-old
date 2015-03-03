@@ -4,7 +4,7 @@
   <title><![CDATA[Not Your Average End User]]></title>
   <link href="http://klatz.co/atom.xml" rel="self"/>
   <link href="http://klatz.co/"/>
-  <updated>2015-02-15T17:46:59-06:00</updated>
+  <updated>2015-03-02T21:29:16-06:00</updated>
   <id>http://klatz.co/</id>
   <author>
     <name><![CDATA[Ian Klatzco]]></name>
@@ -240,7 +240,7 @@ Here&rsquo;re some of the parts:
 
 <p>I connected pins 0 and 1 on the ATtiny to the speaker and switch, respectively. After soldering everything in place, I decided that the reed switch was too difficult to align, so I swapped it for the SPST. I wrote the final version of the code to the ATtiny (or so I thought), connected the battery, and everything looked like it was good to go.</p>
 
-<p>Suddenly, an eerie croaking noise came out of the speaker, audibly changing tones but doing so very slowly. As it was already about midnight at that, I panicked. I guessed the issue was the clock rate on the chip — I tested the code on the Arduino, which boasts a 20MHz crystal, as opposed to the ATtiny, which has a paltry 1MHz. A quick google search found a <a href="http://electronics.stackexchange.com/questions/7859/how-do-i-set-the-clock-speed-fuses-on-an-attiny85-when-using-an-arduino-as-a-pro">Stack Exchange</a> post that told me that I should multiply all values by a factor of sixteen, which worked splendidly. The notes were out of tune, and the croaking sounds remained, but it wasn&rsquo;t nearly as bad as before. The final code is also <a href="https://github.com/ianklatzco/melody_revised/blob/master/zelda_chest_noise_x16.ino">on GitHub</a>.</p>
+<p>Suddenly, an eerie croaking noise came out of the speaker, audibly changing tones but doing so very slowly. As it was already about midnight at that, I panicked. I guessed the issue was the clock rate on the chip — I tested the code on the Arduino, which boasts a 20MHz crystal (which actually runs at 16MHz most of the time), as opposed to the ATtiny, which has a paltry 1MHz. A quick google search found a <a href="http://electronics.stackexchange.com/questions/7859/how-do-i-set-the-clock-speed-fuses-on-an-attiny85-when-using-an-arduino-as-a-pro">Stack Exchange</a> post that told me that I should multiply all values by a factor of sixteen, which worked splendidly. The notes were out of tune, and the croaking sounds remained, but it wasn&rsquo;t nearly as bad as before. The final code is also <a href="https://github.com/ianklatzco/melody_revised/blob/master/zelda_chest_noise_x16.ino">on GitHub</a>.</p>
 
 <h4>Using the Arduino as an ISP (to program the ATtiny)</h4>
 
