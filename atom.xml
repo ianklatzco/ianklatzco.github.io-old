@@ -4,7 +4,7 @@
   <title><![CDATA[Not Your Average End User]]></title>
   <link href="http://klatz.co/atom.xml" rel="self"/>
   <link href="http://klatz.co/"/>
-  <updated>2015-03-07T16:07:03-06:00</updated>
+  <updated>2015-05-27T04:36:28-05:00</updated>
   <id>http://klatz.co/</id>
   <author>
     <name><![CDATA[Ian Klatzco]]></name>
@@ -12,6 +12,25 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Floppera]]></title>
+    <link href="http://klatz.co/blog/floppera/"/>
+    <updated>2015-05-27T04:28:23-05:00</updated>
+    <id>http://klatz.co/blog/floppera</id>
+    <content type="html"><![CDATA[<p>Ever wanted to hear floppy drives sing?</p>
+
+<!--more-->
+
+
+<p></p>
+
+<div class="embed-video-container"><iframe src="//www.youtube.com/embed/w6tuMn5sPyM" allowfullscreen></iframe></div>
+
+
+<p>I stole some floppy drives from old computers in the basement and started following Sammy1Am&rsquo;s tutorial. The system is basically an Arduino, 5v power supply for the Arduino/floppies, a Java program, some Arduino code, and as many floppies as you want. I&rsquo;m not going to go in to how you set everything up, as that&rsquo;s been done plenty of times already. It&rsquo;s certainly been a lot of fun to play various music files in floppified version, though!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Google Tour]]></title>
