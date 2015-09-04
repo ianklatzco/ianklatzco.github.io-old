@@ -4,7 +4,7 @@
   <title><![CDATA[Not Your Average End User]]></title>
   <link href="http://klatz.co/atom.xml" rel="self"/>
   <link href="http://klatz.co/"/>
-  <updated>2015-05-27T04:41:31-05:00</updated>
+  <updated>2015-09-03T20:30:07-05:00</updated>
   <id>http://klatz.co/</id>
   <author>
     <name><![CDATA[Ian Klatzco]]></name>
@@ -12,6 +12,52 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[How to Automatically Back Up Terraria Saves/Worlds With a Script]]></title>
+    <link href="http://klatz.co/blog/terraria-backup-script/"/>
+    <updated>2015-09-03T19:18:35-05:00</updated>
+    <id>http://klatz.co/blog/terraria-backup-script</id>
+    <content type="html"><![CDATA[<p>I recently set up a Terraria server to play on with new friends from school. I wanted regular backups, so I cobbled together a quick backup script. Here&rsquo;s how to set it up.</p>
+
+<!--more-->
+
+
+<p></p>
+
+<p>Should work on Windows 7, may require fine-tuning on other versions.</p>
+
+<p>First, download the <a href="1">command line version of 7zip</a>, and extract the contents of the zip file to C:\7zip (make the 7zip folder, it doesn&rsquo;t exist).</p>
+
+<p>Put the following in a text file, and rename it &ldquo;terrariabackup.bat&rdquo; or whatever you&rsquo;d like. (You may need to enable viewing file extensions - google it). You can put the script wherever you&rsquo;d like, but I recommend &ldquo;C:\Users\USERNAME\Documents\My Games\Terraria\backup&rdquo; (make the backup folder), because you&rsquo;ll have to change the script if you want it elsewhere.</p>
+
+<p>You MUST make the backup folder, or you can delete the second line of the script and your backups will start accumulating in the directory the script is in.</p>
+
+<figure class='code'><figcaption><span>&#8220;Terraria Backup Script&#8221;</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='batch'><span class='line'>C:\<span class="m">7</span>zip\<span class="m">7</span>za a -tzip <span class="nv">%date:~4</span><span class="p">,</span><span class="m">2</span>%-<span class="nv">%date:~7</span><span class="p">,</span><span class="m">2</span>%-<span class="nv">%date:~10</span><span class="p">,</span><span class="m">4</span><span class="nv">%_%</span>TIME:~<span class="m">0</span><span class="p">,</span><span class="m">2</span>%.<span class="nv">%TIME:~3</span><span class="p">,</span><span class="m">2</span><span class="nv">%_</span>.zip <span class="s2">&quot;%USERPROFILE%\Documents\My Games\Terraria\Players&quot;</span> <span class="s2">&quot;%USERPROFILE%\Documents\My Games\Terraria\Worlds&quot;</span>
+</span><span class='line'>move <span class="s2">&quot;%date:~4,2%-%date:~7,2%-%date:~10,4%_%TIME:~0,2%.%TIME:~3,2%_.zip&quot;</span> <span class="s2">&quot;%USERPROFILE%\Documents\My Games\Terraria\backup&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>%USERPROFILE% is just a shortcut for C:\Users\YOUR USERNAME.</p>
+
+<p>You can click on the &ldquo;terrariabackup.bat&rdquo; script to test it. Don&rsquo;t forget the backup folder. If it works, you should see a file in the backup folder with the current date and time as the filename. If so, proceed to the next step. If not, fiddle around a bit or contact me.</p>
+
+<p>Next, you&rsquo;ve got to make a backup task in Task Scheduler. Search for it in the start menu.
+1. Click Action > Create Task. Name it &ldquo;Terraria Backup&rdquo; or the like.
+2. Click Triggers > New. Set the task to the frequency that you would like - click &ldquo;Daily&rdquo; and then &ldquo;Repeat task every:&rdquo;. Hit OK.
+3. Click Actions > New. Under &ldquo;Program/script&rdquo;, put the path to the script. If it&rsquo;s in your Terraria folder, this is &ldquo;C:\Users\USERNAME\Documents\My Games\Terraria\backup\terrariabackup.bat&rdquo; (with quotes). Next to &ldquo;Start in (optional)&rdquo;, type in the directory that the script is in - should be &ldquo;C:\Users\USERNAME\Documents\My Games\Terraria\backup&rdquo; if you&rsquo;ve been following along.
+4. Hit okay. You&rsquo;ll need to type in your password.
+To test:
+5. Click on Task Scheduler Library in the left pane.
+6. Right click on the task and click run.</p>
+
+<p>And that should do it! Let me know if you have any problems.</p>
+
+<p>Thanks to <a href="2">this reddit post</a> for helping me out with the script.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Floppera]]></title>
