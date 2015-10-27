@@ -4,7 +4,7 @@
   <title><![CDATA[Not Your Average End User]]></title>
   <link href="http://klatz.co/atom.xml" rel="self"/>
   <link href="http://klatz.co/"/>
-  <updated>2015-10-10T06:30:44-05:00</updated>
+  <updated>2015-10-27T00:40:56-05:00</updated>
   <id>http://klatz.co/</id>
   <author>
     <name><![CDATA[Ian Klatzco]]></name>
@@ -12,6 +12,25 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Song Devocalizer Box]]></title>
+    <link href="http://klatz.co/blog/devocalizer-box/"/>
+    <updated>2015-10-26T15:25:04-05:00</updated>
+    <id>http://klatz.co/blog/devocalizer-box</id>
+    <content type="html"><![CDATA[<p>A friend of mine loves to sing. I saw a <a href="http://makezine.com/projects/make-39/song-devocalizer/">weekend project on Makezine</a> a while back that I thought would be fitting for her.</p>
+
+<!--more-->
+
+
+<p>Songs are typically mixed with a center, right, and left track. This device allows you to force the left and right channels to use each other as ground, thus canceling the center track via destructive interference. By flipping the switch, you can either enable or disable this behavior, letting my friend enable or disable a song&rsquo;s vocals easily.</p>
+
+<iframe class="imgur-album" width="100%" height="550" frameborder="0" src="//imgur.com/a/x5Kx2/embed"></iframe>
+
+
+<p>This sucker was built with a little bit of janky 3-way soldering plus a careful handheld dremel job to drill holes. It was made at <a href="http://devpost.com/software/soundbox-kz30or">Boilermake 2015</a>.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[How to Automatically Back Up Terraria Saves/Worlds With a Script]]></title>
