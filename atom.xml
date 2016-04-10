@@ -4,7 +4,7 @@
   <title><![CDATA[Not Your Average End User]]></title>
   <link href="http://klatz.co/atom.xml" rel="self"/>
   <link href="http://klatz.co/"/>
-  <updated>2016-03-14T00:50:40-05:00</updated>
+  <updated>2016-04-10T04:30:13-05:00</updated>
   <id>http://klatz.co/</id>
   <author>
     <name><![CDATA[Ian Klatzco]]></name>
@@ -12,6 +12,75 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[How to Make Your Pebble Display Online Users on a Minecraft Server]]></title>
+    <link href="http://klatz.co/blog/pebble-app-minecraft-server-poll/"/>
+    <updated>2016-04-10T04:29:34-05:00</updated>
+    <id>http://klatz.co/blog/pebble-app-minecraft-server-poll</id>
+    <content type="html"><![CDATA[<p>This is an old post that&rsquo;s been sitting around unpublished for some time.</p>
+
+<p>After a lucrative Christmas, I decided to buy myself a Pebble. I <em>really</em> wanted to write some kind of code for it. Since I was on break/had a ton of snow days, I set up a <a href="http://feed-the-beast.com/">Feed the Beast</a> (modded) Minecraft server to play with friends, running via Hamachi (a VPN).</p>
+
+<!--more-->
+
+
+<p></p>
+
+<p>The Pebble arrived around 6 pm on the first of three consecutive snow days leading up to the weekend. I proceded to stay up until 7:30 the next morning <del>working</del> playing with it, mostly in a frustrated attempt to get SSH running on Windows via Cygwin. (Note to all: if you&rsquo;d like to maintain your sanity, please do not do this. Linux exists for a reason.) One quick Ubuntu install later, I copied over the world files and had the Minecraft server running.</p>
+
+<p>I wanted to be able to see who was currently logged into my Minecraft server whenever I glanced at my watch. This turned out to be fairly easy, with a few scripts and the MyData app for Pebble, but was complicated by my use of Hamachi.</p>
+
+<p>Note that this guide explains how to do this for a server running Linux, only. These steps will not run on Windows or OSX servers (but probably could with a bit of coaxing).</p>
+
+<p>You&rsquo;ll need <a href="https://github.com/ianklatzco/mineservpoll">these scripts on your server</a> (click download zip).</p>
+
+<h3>Run your server on Linux</h3>
+
+<p>This has been documented very well elsewhere, so I&rsquo;m not going to go into it. Google it, or feel free to drop me a line if you have problems. Make sure you know your IP, since you&rsquo;ll need it later.</p>
+
+<h3>Forward your ports, or Hamachi</h3>
+
+<p>Again, this has been well-documented. Pick a port that you like and forward it in your router. I&rsquo;ll be using 8000 here.
+If you&rsquo;re using Hamachi, things are a little more complex. You&rsquo;ll need to install Hamachi on your server (using either the <a href="https://secure.logmein.com/labs/#HamachiforLinux">command line version</a> or the <a href="https://www.haguichi.net/">GUI</a>), as well as on your phone.</p>
+
+<h3>Set up Python/bash scripts, Cron task, Minecraft Server</h3>
+
+<p>Run <code>command</code> means open a terminal and enter the command.
+Don&rsquo;t forget to <a href="https://github.com/ianklatzco/mineservpoll">download these files</a>.</p>
+
+<ul>
+<li>Make a new folder in your server folder called mineservpoll.</li>
+<li>Unzip the three scripts and put them in this folder.</li>
+<li>Open starthttp.sh and change <code>/home/ian/server/mineservpoll</code> to the path of your folder.</li>
+<li>In that same file, change the port to whatever you like.</li>
+<li>Open statuscheck.sh and change <code>/home/ian/server/mineservpoll/status.py &gt; /home/ian/server/mineservpoll/status</code> to your server folder&rsquo;s path.</li>
+<li>Open status.py and change <code>localhost:25565</code> to your server&rsquo;s external IP (or Hamachi IP) and port.</li>
+<li>Open up your server.properties file, and set <code>enable-query</code> to true. Save/exit.</li>
+<li>Run <code>pip install mcstatus</code> to get the necessary Python package.</li>
+<li>Run <code>crontab -e</code>. Add the following lines, then save and exit.
+
+<ul>
+<li>@reboot /path/to/starthttp.sh</li>
+<li>* * * * * /path/to/statuscheck.sh</li>
+</ul>
+</li>
+<li>You might also consider adding @reboot <code>/path/to/your/startServer.sh</code> to your cron task.</li>
+<li>Reboot your computer.</li>
+</ul>
+
+
+<h3>Pebble App</h3>
+
+<p>Search for &ldquo;MyData&rdquo; on the Pebble app and load it onto your watch.
+Open the settings menu and type in the IP address of your server, followed by a colon and your port (eg 256.256.256.256:8000) and save your settings.
+If you&rsquo;re using Hamachi, entert the Hamachi IPv4 address for the server, along with the port.</p>
+
+<p>That&rsquo;s it! Upon clicking the refresh button, your watch should display any currently-logged-in users.</p>
+
+<p>Feel free to drop me a line if you run into any hiccups. Twitter&rsquo;s best.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Song Devocalizer Box]]></title>

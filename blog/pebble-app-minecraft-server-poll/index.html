@@ -1,0 +1,267 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>How to Make Your Pebble Display Online Users on a Minecraft Server - Not Your Average End User</title>
+  <meta name="author" content="Ian Klatzco">
+
+  
+  <meta name="description" content="This is an old post that&rsquo;s been sitting around unpublished for some time. After a lucrative Christmas, I decided to buy myself a Pebble. I &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://klatz.co/blog/pebble-app-minecraft-server-poll">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Not Your Average End User" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-46953705-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Not Your Average End User</a></h1>
+  
+    <h2>but rather a teenage geek with a fondness for computers, politics, and tinkering</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:klatz.co" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/about">About</a></li>
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/projects">Projects</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">How to Make Your Pebble Display Online Users on a Minecraft Server</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2016-04-10T04:29:34-05:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>10</span><span class='date-suffix'>th</span>, <span class='date-year'>2016</span></span> <span class='time'>4:29 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>This is an old post that&rsquo;s been sitting around unpublished for some time.</p>
+
+<p>After a lucrative Christmas, I decided to buy myself a Pebble. I <em>really</em> wanted to write some kind of code for it. Since I was on break/had a ton of snow days, I set up a <a href="http://feed-the-beast.com/">Feed the Beast</a> (modded) Minecraft server to play with friends, running via Hamachi (a VPN).</p>
+
+<!--more-->
+
+
+<p></p>
+
+<p>The Pebble arrived around 6 pm on the first of three consecutive snow days leading up to the weekend. I proceded to stay up until 7:30 the next morning <del>working</del> playing with it, mostly in a frustrated attempt to get SSH running on Windows via Cygwin. (Note to all: if you&rsquo;d like to maintain your sanity, please do not do this. Linux exists for a reason.) One quick Ubuntu install later, I copied over the world files and had the Minecraft server running.</p>
+
+<p>I wanted to be able to see who was currently logged into my Minecraft server whenever I glanced at my watch. This turned out to be fairly easy, with a few scripts and the MyData app for Pebble, but was complicated by my use of Hamachi.</p>
+
+<p>Note that this guide explains how to do this for a server running Linux, only. These steps will not run on Windows or OSX servers (but probably could with a bit of coaxing).</p>
+
+<p>You&rsquo;ll need <a href="https://github.com/ianklatzco/mineservpoll">these scripts on your server</a> (click download zip).</p>
+
+<h3>Run your server on Linux</h3>
+
+<p>This has been documented very well elsewhere, so I&rsquo;m not going to go into it. Google it, or feel free to drop me a line if you have problems. Make sure you know your IP, since you&rsquo;ll need it later.</p>
+
+<h3>Forward your ports, or Hamachi</h3>
+
+<p>Again, this has been well-documented. Pick a port that you like and forward it in your router. I&rsquo;ll be using 8000 here.
+If you&rsquo;re using Hamachi, things are a little more complex. You&rsquo;ll need to install Hamachi on your server (using either the <a href="https://secure.logmein.com/labs/#HamachiforLinux">command line version</a> or the <a href="https://www.haguichi.net/">GUI</a>), as well as on your phone.</p>
+
+<h3>Set up Python/bash scripts, Cron task, Minecraft Server</h3>
+
+<p>Run <code>command</code> means open a terminal and enter the command.
+Don&rsquo;t forget to <a href="https://github.com/ianklatzco/mineservpoll">download these files</a>.</p>
+
+<ul>
+<li>Make a new folder in your server folder called mineservpoll.</li>
+<li>Unzip the three scripts and put them in this folder.</li>
+<li>Open starthttp.sh and change <code>/home/ian/server/mineservpoll</code> to the path of your folder.</li>
+<li>In that same file, change the port to whatever you like.</li>
+<li>Open statuscheck.sh and change <code>/home/ian/server/mineservpoll/status.py &gt; /home/ian/server/mineservpoll/status</code> to your server folder&rsquo;s path.</li>
+<li>Open status.py and change <code>localhost:25565</code> to your server&rsquo;s external IP (or Hamachi IP) and port.</li>
+<li>Open up your server.properties file, and set <code>enable-query</code> to true. Save/exit.</li>
+<li>Run <code>pip install mcstatus</code> to get the necessary Python package.</li>
+<li>Run <code>crontab -e</code>. Add the following lines, then save and exit.
+
+<ul>
+<li>@reboot /path/to/starthttp.sh</li>
+<li>* * * * * /path/to/statuscheck.sh</li>
+</ul>
+</li>
+<li>You might also consider adding @reboot <code>/path/to/your/startServer.sh</code> to your cron task.</li>
+<li>Reboot your computer.</li>
+</ul>
+
+
+<h3>Pebble App</h3>
+
+<p>Search for &ldquo;MyData&rdquo; on the Pebble app and load it onto your watch.
+Open the settings menu and type in the IP address of your server, followed by a colon and your port (eg 256.256.256.256:8000) and save your settings.
+If you&rsquo;re using Hamachi, entert the Hamachi IPv4 address for the server, along with the port.</p>
+
+<p>That&rsquo;s it! Upon clicking the refresh button, your watch should display any currently-logged-in users.</p>
+
+<p>Feel free to drop me a line if you run into any hiccups. Twitter&rsquo;s best.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Ian Klatzco</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2016-04-10T04:29:34-05:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>10</span><span class='date-suffix'>th</span>, <span class='date-year'>2016</span></span> <span class='time'>4:29 am</span></time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/devocalizer-box/" title="Previous Post: Song Devocalizer Box">&laquo; Song Devocalizer Box</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>About Me</h1>
+  <p>Hi! I&#8217;m Ian Klatzco. I like computers, governments, the maker movement, virtual reality, and security.<a href="/about">More</a></p>
+
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/pebble-app-minecraft-server-poll/">How to Make Your Pebble Display Online Users on a Minecraft Server</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/devocalizer-box/">Song Devocalizer Box</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/terraria-backup-script/">How to Automatically Back Up Terraria Saves/Worlds With a Script</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/floppera/">Floppera</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/google-tour/">Google Tour</a>
+      </li>
+    
+  </ul>
+</section>
+<section>
+  <h1>Elsewhere</h1>
+  	You can find me as iananananan or ianklatzco on most services that I use.
+</section>
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2016 - Ian Klatzco -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
