@@ -4,7 +4,7 @@
   <title><![CDATA[Not Your Average End User]]></title>
   <link href="http://klatz.co/atom.xml" rel="self"/>
   <link href="http://klatz.co/"/>
-  <updated>2016-04-10T04:30:13-05:00</updated>
+  <updated>2016-04-10T04:39:58-05:00</updated>
   <id>http://klatz.co/</id>
   <author>
     <name><![CDATA[Ian Klatzco]]></name>
@@ -33,7 +33,55 @@
 
 <p>Note that this guide explains how to do this for a server running Linux, only. These steps will not run on Windows or OSX servers (but probably could with a bit of coaxing).</p>
 
-<p>You&rsquo;ll need <a href="https://github.com/ianklatzco/mineservpoll">these scripts on your server</a> (click download zip).</p>
+<p>You&rsquo;ll need <a href="https://github.com/ianklatzco/mineservpoll">these three scripts on your server</a> (click download zip, or copy paste them from here into text files).</p>
+
+<figure class='code'><figcaption><span>starthttp.sh </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="c">#!/bin/bash</span>
+</span><span class='line'><span class="nb">cd</span> /home/ian/server/mineservpoll
+</span><span class='line'>python -m SimpleHTTPServer 8000
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>statuscheck.sh </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="c">#!/bin/bash</span>
+</span><span class='line'>python /home/ian/server/mineservpoll/status.py &gt; /home/ian/server/mineservpoll/status
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>status.py </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='py'><span class='line'><span class="kn">from</span> <span class="nn">mcstatus</span> <span class="kn">import</span> <span class="n">MinecraftServer</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">json</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># If you know the host and port, you may skip this and use MinecraftServer(&quot;example.org&quot;, 1234)</span>
+</span><span class='line'><span class="n">server</span> <span class="o">=</span> <span class="n">MinecraftServer</span><span class="o">.</span><span class="n">lookup</span><span class="p">(</span><span class="s">&quot;localhost:25565&quot;</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># &#39;status&#39; is supported by all Minecraft servers that are version 1.7 or higher.</span>
+</span><span class='line'><span class="n">status</span> <span class="o">=</span> <span class="n">server</span><span class="o">.</span><span class="n">status</span><span class="p">()</span>
+</span><span class='line'><span class="n">query</span> <span class="o">=</span> <span class="n">server</span><span class="o">.</span><span class="n">query</span><span class="p">()</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s">&quot;content&quot;</span><span class="p">:</span> <span class="s">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">query</span><span class="o">.</span><span class="n">players</span><span class="o">.</span><span class="n">names</span><span class="p">),</span> <span class="s">&quot;refresh&quot;</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span> <span class="s">&quot;vibrate&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">&quot;font&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s">&quot;theme&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">&quot;scroll&quot;</span><span class="p">:</span> <span class="mi">33</span><span class="p">,</span> <span class="s">&quot;light&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s">&quot;blink&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s">&quot;updown&quot;</span><span class="p">:</span> <span class="mi">1</span> <span class="p">}))</span>
+</span></code></pre></td></tr></table></div></figure>
+
 
 <h3>Run your server on Linux</h3>
 
@@ -46,8 +94,9 @@ If you&rsquo;re using Hamachi, things are a little more complex. You&rsquo;ll ne
 
 <h3>Set up Python/bash scripts, Cron task, Minecraft Server</h3>
 
-<p>Run <code>command</code> means open a terminal and enter the command.
-Don&rsquo;t forget to <a href="https://github.com/ianklatzco/mineservpoll">download these files</a>.</p>
+<p>Run <code>command</code> means open a terminal and enter the command.</p>
+
+<p>Don&rsquo;t forget to <a href="https://github.com/ianklatzco/mineservpoll">download these files</a>.</p>
 
 <ul>
 <li>Make a new folder in your server folder called mineservpoll.</li>
