@@ -4,7 +4,7 @@
   <title><![CDATA[Not Your Average End User]]></title>
   <link href="http://klatz.co/atom.xml" rel="self"/>
   <link href="http://klatz.co/"/>
-  <updated>2016-04-27T11:47:18-05:00</updated>
+  <updated>2016-04-27T12:00:44-05:00</updated>
   <id>http://klatz.co/</id>
   <author>
     <name><![CDATA[Ian Klatzco]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[How to Rebind the Tmux Prefix]]></title>
+    <title type="html"><![CDATA[How to Rebind Your Tmux Prefix]]></title>
     <link href="http://klatz.co/blog/how-to-rebind-the-tmux-prefix/"/>
     <updated>2016-04-27T10:47:38-05:00</updated>
     <id>http://klatz.co/blog/how-to-rebind-the-tmux-prefix</id>
