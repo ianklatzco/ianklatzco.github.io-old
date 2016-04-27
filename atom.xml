@@ -4,7 +4,7 @@
   <title><![CDATA[Not Your Average End User]]></title>
   <link href="http://klatz.co/atom.xml" rel="self"/>
   <link href="http://klatz.co/"/>
-  <updated>2016-04-10T05:24:57-05:00</updated>
+  <updated>2016-04-27T11:47:18-05:00</updated>
   <id>http://klatz.co/</id>
   <author>
     <name><![CDATA[Ian Klatzco]]></name>
@@ -12,6 +12,26 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[How to Rebind the Tmux Prefix]]></title>
+    <link href="http://klatz.co/blog/how-to-rebind-the-tmux-prefix/"/>
+    <updated>2016-04-27T10:47:38-05:00</updated>
+    <id>http://klatz.co/blog/how-to-rebind-the-tmux-prefix</id>
+    <content type="html"><![CDATA[<p>I couldn&rsquo;t find a satisfactorily quick answer for this with a google search, so here it is plain.</p>
+
+<p>Create a .tmux.conf in your home directory. Add the following to the file:</p>
+
+<figure class='code'><figcaption><span>&#8220;.tmux.conf&#8221;</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>unbind-key C-b
+</span><span class='line'><span class="nb">set</span> -g prefix C-a
+</span><span class='line'><span class="nb">bind</span>-key C-a send-prefix
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[How to Make Your Pebble Display Online Users on a Minecraft Server]]></title>
