@@ -4,7 +4,7 @@
   <title><![CDATA[Not Your Average End User]]></title>
   <link href="http://klatz.co/atom.xml" rel="self"/>
   <link href="http://klatz.co/"/>
-  <updated>2016-04-29T02:41:47-05:00</updated>
+  <updated>2016-07-31T02:00:28-05:00</updated>
   <id>http://klatz.co/</id>
   <author>
     <name><![CDATA[Ian Klatzco]]></name>
@@ -12,6 +12,23 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Gobby on OSX]]></title>
+    <link href="http://klatz.co/blog/gobby-on-osx/"/>
+    <updated>2016-07-31T01:54:45-05:00</updated>
+    <id>http://klatz.co/blog/gobby-on-osx</id>
+    <content type="html"><![CDATA[<p>The <a href="https://github.com/gobby/gobby/wiki/Download">gobby download page</a> somewhat unhelpfully states that &ldquo;Gobby runs on Mac OS X, however we cannot offer a pre-built package at the moment.&rdquo;</p>
+
+<p>Someone&rsquo;s compiled it and throw it into brew&rsquo;s repository, though.</p>
+
+<p><code>brew install homebrew/gui/gobby</code></p>
+
+<p>Install <a href="https://www.xquartz.org/">XQuartz</a> (local X server on OSX, as far as I&rsquo;ve gathered).</p>
+
+<p>Find gobby&rsquo;s executable on your machine (probably <code>/usr/local/Cellar/gobby</code>) and open it in XQuartz.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[How to Change Your Tmux Prefix]]></title>
