@@ -4,7 +4,7 @@
   <title><![CDATA[Not Your Average End User]]></title>
   <link href="http://klatz.co/atom.xml" rel="self"/>
   <link href="http://klatz.co/"/>
-  <updated>2016-09-07T23:10:56-05:00</updated>
+  <updated>2016-09-19T14:36:03-05:00</updated>
   <id>http://klatz.co/</id>
   <author>
     <name><![CDATA[Ian Klatzco]]></name>
@@ -12,6 +12,67 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[catfact.py: A Cat Fact Delivery Service]]></title>
+    <link href="http://klatz.co/blog/catfact-dot-py-a-cat-fact-delivery-tool/"/>
+    <updated>2016-09-19T14:22:56-05:00</updated>
+    <id>http://klatz.co/blog/catfact-dot-py-a-cat-fact-delivery-tool</id>
+    <content type="html"><![CDATA[<p>Instead of getting a full night&rsquo;s sleep before a week of classes, I decided to write a python script that sends cat facts to a list of ~friends~ logged in to our university&rsquo;s server.</p>
+
+<p>At least, they were friends when I added them to this list :^)</p>
+
+<!--more-->
+
+
+<p>
+You can see it on GitHub <a href="https://gist.github.com/ianklatzco/09acba2e528ec6b285dc52bde07754af]">here</a>.</p>
+
+<div><script src='https://gist.github.com/09acba2e528ec6b285dc52bde07754af.js?file=catfact.py'></script>
+<noscript><pre><code># if netid is logged in, send a random cat fact to all of its terminals.
+# usage: crontab -e. paste in:
+#       0 * * * * python ~/catfact.py
+# logs in ~/victims.txt
+# why did i spend so much time on this.
+messagechance = 5 # 1 is 1%, 99 is 99%. keep in mind this will only run if they&#39;re logged in.
+postscript = &#39;\n this has been an automated cat fact. contact me to unsubscribe.\n&#39;
+listofnetids = [&#39;netids&#39;,&#39;go&#39;,&#39;here&#39;]
+
+import os
+import subprocess
+import random
+
+from time import gmtime, strftime
+
+# catfacts
+import requests
+import json
+catfact = requests.get(&#39;http://catfacts-api.appspot.com/api/facts&#39;).json()[&quot;facts&quot;]
+
+FNULL = open(os.devnull, &#39;w&#39;)
+
+who = subprocess.check_output([&#39;who&#39;]) # 2.7 compliant
+listwho = who.split(&#39;\n&#39;)
+
+for netid in listofnetids:
+        if random.randint(1,100) &gt;= messagechance:
+                continue
+        ptslist = []
+        for line in listwho:
+                if netid in line:
+                        ptslist.append(line.split(&#39; &#39;)[1])
+        for pts in ptslist:
+                p = subprocess.Popen([&#39;write&#39;,netid,pts],stdout=FNULL,stdin=subprocess.PIPE)
+                quote = (catfact)[0]
+                p.stdin.write(&#39; &#39;+quote+postscript)
+                p.stdin.close()
+        with open(&quot;victims.txt&quot;,&quot;a&quot;) as f:
+                f.write(netid+&#39;, &#39;+quote+&#39; &#39;+strftime(&quot;%Y-%m-%d %H:%M:%S&quot;, gmtime())+&#39;\n&#39;)</code></pre></noscript></div>
+
+
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Gobby on OSX]]></title>
@@ -570,42 +631,6 @@ In order to program the ATtiny, I used the Arduino. I followed the guide at <a h
 
 <iframe width="420" height="315" src="//www.youtube.com/embed/PlUpkZjw3vA" frameborder="0" allowfullscreen></iframe>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Why 1:1 iPad Programs Suck.]]></title>
-    <link href="http://klatz.co/blog/why-1-1-ipad-programs-suck/"/>
-    <updated>2014-01-07T17:43:02-06:00</updated>
-    <id>http://klatz.co/blog/why-1-1-ipad-programs-suck</id>
-    <content type="html"><![CDATA[<p>I consider myself a pretty efficient worker when I get down to it. Not that I work all the time (actually, I don&rsquo;t work much of the time, but that&rsquo;s another issue), but that I work with optimal utilization of available resources (read: I like configuring my gadgets to help me do things). It comes from a childhood of ample freedom with tech, in that my father always let me to take things from him and put them into the most useful form. Beyond that, I like technology. Hell, I love technology, and the productivity boosts it offers. So you might imagine my elation when my school announced it would begin a 1:1 iPad program starting this year.</p>
-
-<!-- more -->
-
-
-<p>Bias against Apple aside, I had always entertained the notion of walking into my classes with a computing device. The particular draw was the ability to record homework assignments into <a href="http://www.wunderlist.com">Wunderlist</a> (which, as you can see below, has grown of of control pretty quickly). I dreamed of a day where I could freely check my email, google an unknown topic, or zero my RSS feeds on the fly—and that day came.</p>
-
-<p>But it came with more inconveniences than I could have ever imagined. There are two major problems.</p>
-
-<ul>
-<li>Books <strong>must</strong> be on iPads. (Apparently the administration that approved the program never knew this would be a requirement.)</li>
-<li>The tech policy is incredibly vague.</li>
-</ul>
-
-
-<p><img src="http://i.imgur.com/6bFnaKI.jpg" alt="silliness" /></p>
-
-<p>That&rsquo;s my iPad for composition. One monitor has a screenshot of my ipad for the assignment. Another my todo list and the book page itself, the pages also screenshots.</p>
-
-<p>I fail to see how this is more efficient than a book and a notebook and an assignment book. The amount of underlying infrastructure that I have setup to get everything running is utterly ridiculous. Granted, I love typing instead of writing, but the point stands. Notability, Dropbox>Camera Uploads, iOS running on two devices that need to be plugged in at the same time, all of this is absurd. I consider myself technologically-inclined. But I&rsquo;m overwhelmed at the amount of setup I need to compensate for the complexities of the iPad program. I can hardly imagine the struggles it causes for people who aren&rsquo;t technologically inclined. After one teacher mentioned that he had heard of one student whose parents bought him two iPads (one for the book, another for note taking), I seriously considered it.</p>
-
-<p>Admittedly, I am inclined to overcomplicating things, and I tend to be a bit spoiled technology-wise, and I very well might be overcomplicating this. But I think it&rsquo;d be pretty difficult to simplify the setup to not use two screens. Switching between Notability and the textbook is a pain.</p>
-
-<p>I would be perfectly content with a book, or digital book applications that didn&rsquo;t suck. The vast majority of them are buggy or full of DRM.</p>
-
-<p>Now, iPads are extraordinarily convenient in that they&rsquo;re light. I&rsquo;ve opted for an extraordinarily light backpack, instead of my usually excessively hefty one. I never go to my locker anymore. I rarely forget books, since the majority of them are on my iPad. On the other hand, however, when the internet goes down, I lose half of my books. Because DRM sucks.</p>
-
-<p>I appreciate my relatively conservative school&rsquo;s attempts to remain at the forefront of tech adoption. But trying to depend on a system that&rsquo;s not really there doesn&rsquo;t really work.</p>
 ]]></content>
   </entry>
   

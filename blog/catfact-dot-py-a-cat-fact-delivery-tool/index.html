@@ -27,11 +27,11 @@ bark
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>How to Automatically Back Up Terraria Saves/Worlds With a Script - Not Your Average End User</title>
+  <title>catfact.py: A Cat Fact Delivery Service - Not Your Average End User</title>
   <meta name="author" content="Ian Klatzco">
 
   
-  <meta name="description" content="I recently set up a Terraria server to play on with new friends from school. I wanted regular backups, so I cobbled together a quick backup script. &hellip;">
+  <meta name="description" content="Instead of getting a full night&rsquo;s sleep before a week of classes, I decided to write a python script that sends cat facts to a list of ~friends &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -40,7 +40,7 @@ bark
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://klatz.co/blog/terraria-backup-script">
+  <link rel="canonical" href="http://klatz.co/blog/catfact-dot-py-a-cat-fact-delivery-tool">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Not Your Average End User" type="application/atom+xml">
@@ -104,7 +104,7 @@ bark
   
   <header>
     
-      <h1 class="entry-title">How to Automatically Back Up Terraria Saves/Worlds With a Script</h1>
+      <h1 class="entry-title">catfact.py: A Cat Fact Delivery Service</h1>
     
     
       <p class="meta">
@@ -113,58 +113,66 @@ bark
 
 
 
-<time class='entry-date' datetime='2015-09-03T19:18:35-05:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>3</span><span class='date-suffix'>rd</span>, <span class='date-year'>2015</span></span> <span class='time'>7:18 pm</span></time>
+<time class='entry-date' datetime='2016-09-19T14:22:56-05:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>19</span><span class='date-suffix'>th</span>, <span class='date-year'>2016</span></span> <span class='time'>2:22 pm</span></time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>I recently set up a Terraria server to play on with new friends from school. I wanted regular backups, so I cobbled together a quick backup script. Here&rsquo;s how to set it up.</p>
+<div class="entry-content"><p>Instead of getting a full night&rsquo;s sleep before a week of classes, I decided to write a python script that sends cat facts to a list of ~friends~ logged in to our university&rsquo;s server.</p>
+
+<p>At least, they were friends when I added them to this list :^)</p>
 
 <!--more-->
 
 
-<p></p>
+<p>
+You can see it on GitHub <a href="https://gist.github.com/ianklatzco/09acba2e528ec6b285dc52bde07754af]">here</a>.</p>
 
-<p>Should work on Windows 7, may require fine-tuning on other versions.</p>
+<div><script src='https://gist.github.com/09acba2e528ec6b285dc52bde07754af.js?file=catfact.py'></script>
+<noscript><pre><code># if netid is logged in, send a random cat fact to all of its terminals.
+# usage: crontab -e. paste in:
+#       0 * * * * python ~/catfact.py
+# logs in ~/victims.txt
+# why did i spend so much time on this.
+messagechance = 5 # 1 is 1%, 99 is 99%. keep in mind this will only run if they&#39;re logged in.
+postscript = &#39;\n this has been an automated cat fact. contact me to unsubscribe.\n&#39;
+listofnetids = [&#39;netids&#39;,&#39;go&#39;,&#39;here&#39;]
 
-<p>First, download the <a href="1">command line version of 7zip</a>, and extract the contents of the zip file to C:\7zip (make the 7zip folder, it doesn&rsquo;t exist).</p>
+import os
+import subprocess
+import random
 
-<p>Put the following in a text file, and rename it &ldquo;terrariabackup.bat&rdquo; or whatever you&rsquo;d like. (You may need to enable viewing file extensions - google it). You can put the script wherever you&rsquo;d like, but I recommend &ldquo;C:\Users\USERNAME\Documents\My Games\Terraria\backup&rdquo; (make the backup folder), because you&rsquo;ll have to change the script if you want it elsewhere.</p>
+from time import gmtime, strftime
 
-<p>You MUST make the backup folder, or you can delete the second line of the script and your backups will start accumulating in the directory the script is in.</p>
+# catfacts
+import requests
+import json
+catfact = requests.get(&#39;http://catfacts-api.appspot.com/api/facts&#39;).json()[&quot;facts&quot;]
 
-<figure class='code'><figcaption><span>&#8220;Terraria Backup Script&#8221;</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='batch'><span class='line'>C:\<span class="m">7</span>zip\<span class="m">7</span>za a -tzip <span class="nv">%date:~4</span><span class="p">,</span><span class="m">2</span>%-<span class="nv">%date:~7</span><span class="p">,</span><span class="m">2</span>%-<span class="nv">%date:~10</span><span class="p">,</span><span class="m">4</span><span class="nv">%_%</span>TIME:~<span class="m">0</span><span class="p">,</span><span class="m">2</span>%.<span class="nv">%TIME:~3</span><span class="p">,</span><span class="m">2</span><span class="nv">%_</span>.zip <span class="s2">&quot;%USERPROFILE%\Documents\My Games\Terraria\Players&quot;</span> <span class="s2">&quot;%USERPROFILE%\Documents\My Games\Terraria\Worlds&quot;</span>
-</span><span class='line'>move <span class="s2">&quot;%date:~4,2%-%date:~7,2%-%date:~10,4%_%TIME:~0,2%.%TIME:~3,2%_.zip&quot;</span> <span class="s2">&quot;%USERPROFILE%\Documents\My Games\Terraria\backup&quot;</span>
-</span></code></pre></td></tr></table></div></figure>
+FNULL = open(os.devnull, &#39;w&#39;)
+
+who = subprocess.check_output([&#39;who&#39;]) # 2.7 compliant
+listwho = who.split(&#39;\n&#39;)
+
+for netid in listofnetids:
+        if random.randint(1,100) &gt;= messagechance:
+                continue
+        ptslist = []
+        for line in listwho:
+                if netid in line:
+                        ptslist.append(line.split(&#39; &#39;)[1])
+        for pts in ptslist:
+                p = subprocess.Popen([&#39;write&#39;,netid,pts],stdout=FNULL,stdin=subprocess.PIPE)
+                quote = (catfact)[0]
+                p.stdin.write(&#39; &#39;+quote+postscript)
+                p.stdin.close()
+        with open(&quot;victims.txt&quot;,&quot;a&quot;) as f:
+                f.write(netid+&#39;, &#39;+quote+&#39; &#39;+strftime(&quot;%Y-%m-%d %H:%M:%S&quot;, gmtime())+&#39;\n&#39;)</code></pre></noscript></div>
 
 
-<p>%USERPROFILE% is just a shortcut for C:\Users\YOUR USERNAME.</p>
 
-<p>You can click on the &ldquo;terrariabackup.bat&rdquo; script to test it. Don&rsquo;t forget the backup folder. If it works, you should see a file in the backup folder with the current date and time as the filename. If so, proceed to the next step. If not, fiddle around a bit or contact me.</p>
-
-<p>Next, you&rsquo;ve got to make a backup task in Task Scheduler. Search for it in the start menu.</p>
-
-<p>Click Action > Create Task. Name it &ldquo;Terraria Backup&rdquo; or the like.</p>
-
-<p>Click Triggers > New. Set the task to the frequency that you would like - click &ldquo;Daily&rdquo; and then &ldquo;Repeat task every:&rdquo;. Hit OK.</p>
-
-<p>Click Actions > New. Under &ldquo;Program/script&rdquo;, put the path to the script. If it&rsquo;s in your Terraria folder, this is &ldquo;C:\Users\USERNAME\Documents\My Games\Terraria\backup\terrariabackup.bat&rdquo; (with quotes). Next to &ldquo;Start in (optional)&rdquo;, type in the directory that the script is in - should be &ldquo;C:\Users\USERNAME\Documents\My Games\Terraria\backup&rdquo; if you&rsquo;ve been following along.</p>
-
-<p>Hit okay. You&rsquo;ll need to type in your password.</p>
-
-<p>To test:</p>
-
-<p>Click on Task Scheduler Library in the left pane.</p>
-
-<p>Right click on the task and click run.</p>
-
-<p>And that should do it! Let me know if you have any problems.</p>
-
-<p>Thanks to <a href="2">this reddit post</a> for helping me out with the script.</p>
 </div>
 
 
@@ -180,7 +188,7 @@ bark
 
 
 
-<time class='entry-date' datetime='2015-09-03T19:18:35-05:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>3</span><span class='date-suffix'>rd</span>, <span class='date-year'>2015</span></span> <span class='time'>7:18 pm</span></time>
+<time class='entry-date' datetime='2016-09-19T14:22:56-05:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>19</span><span class='date-suffix'>th</span>, <span class='date-year'>2016</span></span> <span class='time'>2:22 pm</span></time>
       
 
 
@@ -195,10 +203,8 @@ bark
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/floppera/" title="Previous Post: Floppera">&laquo; Floppera</a>
+        <a class="basic-alignment left" href="/blog/gobby-on-osx/" title="Previous Post: Gobby on OSX">&laquo; Gobby on OSX</a>
       
-      
-        <a class="basic-alignment right" href="/blog/devocalizer-box/" title="Next Post: Song Devocalizer Box">Song Devocalizer Box &raquo;</a>
       
     </p>
   </footer>

@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://klatz.co/blog/catfact-dot-py-a-cat-fact-delivery-tool/</loc>
+    <lastmod>2016-09-19T14:22:56-05:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>http://klatz.co/blog/gobby-on-osx/</loc>
     <lastmod>2016-07-31T01:54:45-05:00</lastmod>
     <priority>0.8</priority>
@@ -102,25 +107,25 @@
   </url>
   <url>
     <loc>http://klatz.co/blog/archives/</loc>
-    <lastmod>2016-09-07T23:10:56-05:00</lastmod>
+    <lastmod>2016-09-19T14:36:03-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://klatz.co/</loc>
-    <lastmod>2016-09-07T23:10:56-05:00</lastmod>
+    <lastmod>2016-09-19T14:36:03-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://klatz.co/about/</loc>
-    <lastmod>2016-09-07T23:10:56-05:00</lastmod>
+    <lastmod>2016-09-19T14:36:03-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://klatz.co/projects/</loc>
-    <lastmod>2016-09-07T23:10:56-05:00</lastmod>
+    <lastmod>2016-09-19T14:36:03-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>

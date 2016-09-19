@@ -27,11 +27,11 @@ bark
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>How to Automatically Back Up Terraria Saves/Worlds With a Script - Not Your Average End User</title>
+  <title>Not Your Average End User</title>
   <meta name="author" content="Ian Klatzco">
 
   
-  <meta name="description" content="I recently set up a Terraria server to play on with new friends from school. I wanted regular backups, so I cobbled together a quick backup script. &hellip;">
+  <meta name="description" content="I consider myself a pretty efficient worker when I get down to it. Not that I work all the time (actually, I don&rsquo;t work much of the time, but &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -40,7 +40,7 @@ bark
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://klatz.co/blog/terraria-backup-script">
+  <link rel="canonical" href="http://klatz.co/posts/3">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Not Your Average End User" type="application/atom+xml">
@@ -99,12 +99,15 @@ bark
 </nav>
   <div id="main">
     <div id="content">
-      <div>
-<article class="hentry" role="article">
+      <div class="blog-index">
   
+  
+  
+    <article>
+      
   <header>
     
-      <h1 class="entry-title">How to Automatically Back Up Terraria Saves/Worlds With a Script</h1>
+      <h1 class="entry-title"><a href="/blog/why-1-1-ipad-programs-suck/">Why 1:1 iPad Programs Suck.</a></h1>
     
     
       <p class="meta">
@@ -113,99 +116,34 @@ bark
 
 
 
-<time class='entry-date' datetime='2015-09-03T19:18:35-05:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>3</span><span class='date-suffix'>rd</span>, <span class='date-year'>2015</span></span> <span class='time'>7:18 pm</span></time>
+<time class='entry-date' datetime='2014-01-07T17:43:02-06:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>7</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>5:43 pm</span></time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>I recently set up a Terraria server to play on with new friends from school. I wanted regular backups, so I cobbled together a quick backup script. Here&rsquo;s how to set it up.</p>
+  <div class="entry-content"><p>I consider myself a pretty efficient worker when I get down to it. Not that I work all the time (actually, I don&rsquo;t work much of the time, but that&rsquo;s another issue), but that I work with optimal utilization of available resources (read: I like configuring my gadgets to help me do things). It comes from a childhood of ample freedom with tech, in that my father always let me to take things from him and put them into the most useful form. Beyond that, I like technology. Hell, I love technology, and the productivity boosts it offers. So you might imagine my elation when my school announced it would begin a 1:1 iPad program starting this year.</p>
 
-<!--more-->
-
-
-<p></p>
-
-<p>Should work on Windows 7, may require fine-tuning on other versions.</p>
-
-<p>First, download the <a href="1">command line version of 7zip</a>, and extract the contents of the zip file to C:\7zip (make the 7zip folder, it doesn&rsquo;t exist).</p>
-
-<p>Put the following in a text file, and rename it &ldquo;terrariabackup.bat&rdquo; or whatever you&rsquo;d like. (You may need to enable viewing file extensions - google it). You can put the script wherever you&rsquo;d like, but I recommend &ldquo;C:\Users\USERNAME\Documents\My Games\Terraria\backup&rdquo; (make the backup folder), because you&rsquo;ll have to change the script if you want it elsewhere.</p>
-
-<p>You MUST make the backup folder, or you can delete the second line of the script and your backups will start accumulating in the directory the script is in.</p>
-
-<figure class='code'><figcaption><span>&#8220;Terraria Backup Script&#8221;</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='batch'><span class='line'>C:\<span class="m">7</span>zip\<span class="m">7</span>za a -tzip <span class="nv">%date:~4</span><span class="p">,</span><span class="m">2</span>%-<span class="nv">%date:~7</span><span class="p">,</span><span class="m">2</span>%-<span class="nv">%date:~10</span><span class="p">,</span><span class="m">4</span><span class="nv">%_%</span>TIME:~<span class="m">0</span><span class="p">,</span><span class="m">2</span>%.<span class="nv">%TIME:~3</span><span class="p">,</span><span class="m">2</span><span class="nv">%_</span>.zip <span class="s2">&quot;%USERPROFILE%\Documents\My Games\Terraria\Players&quot;</span> <span class="s2">&quot;%USERPROFILE%\Documents\My Games\Terraria\Worlds&quot;</span>
-</span><span class='line'>move <span class="s2">&quot;%date:~4,2%-%date:~7,2%-%date:~10,4%_%TIME:~0,2%.%TIME:~3,2%_.zip&quot;</span> <span class="s2">&quot;%USERPROFILE%\Documents\My Games\Terraria\backup&quot;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>%USERPROFILE% is just a shortcut for C:\Users\YOUR USERNAME.</p>
-
-<p>You can click on the &ldquo;terrariabackup.bat&rdquo; script to test it. Don&rsquo;t forget the backup folder. If it works, you should see a file in the backup folder with the current date and time as the filename. If so, proceed to the next step. If not, fiddle around a bit or contact me.</p>
-
-<p>Next, you&rsquo;ve got to make a backup task in Task Scheduler. Search for it in the start menu.</p>
-
-<p>Click Action > Create Task. Name it &ldquo;Terraria Backup&rdquo; or the like.</p>
-
-<p>Click Triggers > New. Set the task to the frequency that you would like - click &ldquo;Daily&rdquo; and then &ldquo;Repeat task every:&rdquo;. Hit OK.</p>
-
-<p>Click Actions > New. Under &ldquo;Program/script&rdquo;, put the path to the script. If it&rsquo;s in your Terraria folder, this is &ldquo;C:\Users\USERNAME\Documents\My Games\Terraria\backup\terrariabackup.bat&rdquo; (with quotes). Next to &ldquo;Start in (optional)&rdquo;, type in the directory that the script is in - should be &ldquo;C:\Users\USERNAME\Documents\My Games\Terraria\backup&rdquo; if you&rsquo;ve been following along.</p>
-
-<p>Hit okay. You&rsquo;ll need to type in your password.</p>
-
-<p>To test:</p>
-
-<p>Click on Task Scheduler Library in the left pane.</p>
-
-<p>Right click on the task and click run.</p>
-
-<p>And that should do it! Let me know if you have any problems.</p>
-
-<p>Thanks to <a href="2">this reddit post</a> for helping me out with the script.</p>
 </div>
-
-
-  <footer>
-    <p class="meta">
-      
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/why-1-1-ipad-programs-suck/">Read on &rarr;</a>
+    </footer>
   
 
-<span class="byline author vcard">Posted by <span class="fn">Ian Klatzco</span></span>
 
-      
-
-
-
-
-<time class='entry-date' datetime='2015-09-03T19:18:35-05:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>3</span><span class='date-suffix'>rd</span>, <span class='date-year'>2015</span></span> <span class='time'>7:18 pm</span></time>
-      
-
-
-    </p>
+    </article>
+  
+  <div class="pagination">
     
-      <div class="sharing">
-  
-  
-  
-</div>
-
+    <a href="/blog/archives">Blog Archives</a>
     
-    <p class="meta">
-      
-        <a class="basic-alignment left" href="/blog/floppera/" title="Previous Post: Floppera">&laquo; Floppera</a>
-      
-      
-        <a class="basic-alignment right" href="/blog/devocalizer-box/" title="Next Post: Song Devocalizer Box">Song Devocalizer Box &raquo;</a>
-      
-    </p>
-  </footer>
-</article>
-
+    <a class="next" href="/posts/2">Newer &rarr;</a>
+    
+  </div>
 </div>
-
 <aside class="sidebar">
   
     <section>
@@ -249,7 +187,6 @@ bark
 
   
 </aside>
-
 
     </div>
   </div>
