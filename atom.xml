@@ -4,7 +4,7 @@
   <title><![CDATA[Not Your Average End User]]></title>
   <link href="http://klatz.co/atom.xml" rel="self"/>
   <link href="http://klatz.co/"/>
-  <updated>2016-09-19T14:36:03-05:00</updated>
+  <updated>2016-09-19T21:11:38-05:00</updated>
   <id>http://klatz.co/</id>
   <author>
     <name><![CDATA[Ian Klatzco]]></name>
@@ -26,7 +26,7 @@
 
 
 <p>
-You can see it on GitHub <a href="https://gist.github.com/ianklatzco/09acba2e528ec6b285dc52bde07754af]">here</a>.</p>
+You can see it on GitHub <a href="https://gist.github.com/ianklatzco/09acba2e528ec6b285dc52bde07754af">here</a>.</p>
 
 <div><script src='https://gist.github.com/09acba2e528ec6b285dc52bde07754af.js?file=catfact.py'></script>
 <noscript><pre><code># if netid is logged in, send a random cat fact to all of its terminals.
