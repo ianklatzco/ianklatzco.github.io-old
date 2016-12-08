@@ -4,7 +4,7 @@
   <title><![CDATA[Not Your Average End User]]></title>
   <link href="http://klatz.co/atom.xml" rel="self"/>
   <link href="http://klatz.co/"/>
-  <updated>2016-12-08T13:28:41-06:00</updated>
+  <updated>2016-12-08T13:35:27-06:00</updated>
   <id>http://klatz.co/</id>
   <author>
     <name><![CDATA[Ian Klatzco]]></name>
@@ -35,7 +35,7 @@ You can see it on GitHub <a href="https://gist.github.com/ianklatzco/09acba2e528
 # logs in ~/victims.txt
 # why did i spend so much time on this.
 messagechance = 5 # 1 is 1%, 99 is 99%. keep in mind this will only run if they&#39;re logged in.
-postscript = &#39;\n this has been an automated cat fact. contact me to unsubscribe.\n&#39;
+postscript = &#39;\n this has been an automated cat fact. contact me to unsubscribe. or to subscribe others.\n&#39;
 listofnetids = [&#39;netids&#39;,&#39;go&#39;,&#39;here&#39;]
 
 import os
@@ -47,7 +47,8 @@ from time import gmtime, strftime
 # catfacts
 import requests
 import json
-catfact = requests.get(&#39;http://catfacts-api.appspot.com/api/facts&#39;).json()[&quot;facts&quot;]
+catfact = json.loads(requests.get(&#39;http://catfacts-api.appspot.com/api/facts&#39;).content)[&quot;facts&quot;]
+#catfact = requests.get(&#39;http://catfacts-api.appspot.com/api/facts&#39;).json()[&quot;facts&quot;] # this is an attempt to not use the json li$
 
 FNULL = open(os.devnull, &#39;w&#39;)
 
@@ -56,18 +57,21 @@ listwho = who.split(&#39;\n&#39;)
 
 for netid in listofnetids:
         if random.randint(1,100) &gt;= messagechance:
-                continue
+                continue # to the next netid
+        print(netid+&quot; won the diceroll!&quot;)
         ptslist = []
         for line in listwho:
                 if netid in line:
                         ptslist.append(line.split(&#39; &#39;)[1])
+        if not ptslist: #if pts is empty
+                continue # they&#39;re not online, diceroll next netid
         for pts in ptslist:
                 p = subprocess.Popen([&#39;write&#39;,netid,pts],stdout=FNULL,stdin=subprocess.PIPE)
-                quote = (catfact)[0]
-                p.stdin.write(&#39; &#39;+quote+postscript)
+                p.stdin.write(&#39; &#39;+catfact[0]+postscript)
                 p.stdin.close()
         with open(&quot;victims.txt&quot;,&quot;a&quot;) as f:
-                f.write(netid+&#39;, &#39;+quote+&#39; &#39;+strftime(&quot;%Y-%m-%d %H:%M:%S&quot;, gmtime())+&#39;\n&#39;)</code></pre></noscript></div>
+                f.write(netid+&#39;, &#39;+catfact[0]+&#39; &#39;+strftime(&quot;%Y-%m-%d %H:%M:%S&quot;, gmtime())+&#39;\n&#39;)
+</code></pre></noscript></div>
 
 
 
